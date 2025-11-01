@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hasan Ramdani — XI TJKT 1</title>
+    <style>
+        :root{
+            --bg:#f6f8fb; --card:#fff; --text:#0f1724;
+            --accent:#2c3e50; --accent-2:#3b82f6; --muted:#6b7280;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial}
+        body{background:var(--bg);color:var(--text);line-height:1.45;-webkit-font-smoothing:antialiased}
+        .site{max-width:1100px;margin:32px auto;padding:0 20px}
+        /* NAV */
+        .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 8px 28px rgba(15,23,36,0.08)}
+        .brand{display:flex;gap:12px;align-items:center}
+        .logo{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+        .meta .name{font-weight:700}
+        .meta .kelas{font-size:.85rem;opacity:.95}
+        .nav-links{display:flex;gap:8px;align-items:center}
+        .nav-links a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+        .nav-links a.home{background:rgba(255,255,255,0.12)}
+        .nav-toggle{display:none;background:transparent;border:0;color:white;font-size:20px}
+        /* HERO */
+        .hero{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:28px 0}
+        .hero .text{max-width:66%}
+        .welcome{font-size:3rem;font-weight:800;color:var(--accent);margin-bottom:10px}
+        .lead{font-size:1.05rem;color:var(--muted)}
+        .btn{display:inline-block;padding:10px 16px;background:var(--accent-2);color:white;border-radius:10px;text-decoration:none;font-weight:700;margin-top:12px}
+        .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(15,23,36,0.06);min-width:260px}
+        /* FEATURES & PROJECTS */
+        .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+        .feature,.project{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,36,0.04)}
+        .project img{width:100%;border-radius:8px;display:block}
+        /* CONTACT */
+        .contact{margin-top:18px;display:grid;grid-template-columns:1fr 320px;gap:16px}
+        form{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,36,0.04)}
+        input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-top:8px;font-size:0.95rem}
+        .muted{color:var(--muted)}
+        footer{margin-top:28px;text-align:center;color:var(--muted);font-size:.95rem}
+        /* Responsive */
+        @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)} .hero{flex-direction:column} .hero .text{max-width:100%}}
+        @media (max-width:560px){
+            .nav-links{display:none} .nav-toggle{display:block}
+            .grid{grid-template-columns:1fr} .contact{grid-template-columns:1fr}
+            .welcome{font-size:2rem}
+        }
+        /* small helpers */
+        .social{display:flex;gap:8px;margin-top:10px}
+        .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3f4f6;font-weight:600;color:var(--muted);font-size:.9rem}
+    </style>
+</head>
+<body>
+    <div class="site">
+        <header class="nav" role="banner">
+            <div class="brand">
+                <div class="logo">HR</div>
+                <div class="meta">
+                    <div class="name">Hasan Ramdani</div>
+                    <div class="kelas">XI TJKT 1</div>
+                </div>
+            </div>
+
+            <nav class="nav-links" role="navigation" aria-label="Primary">
+                <a class="home" href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        </header>
+
+        <main>
+            <section id="home" class="hero" aria-labelledby="welcome-title">
+                <div class="text">
+                    <h1 id="welcome-title" class="welcome">Selamat Datang — Hasan Ramdani</h1>
+                    <p class="lead">Saya dari kelas XI TJKT 1. Template ini berisi navigasi, fitur, contoh proyek, dan formulir kontak untuk tugas atau portofolio.</p>
+                    <div style="margin-top:14px">
+                        <a class="btn" href="#projects">Lihat Proyek</a>
+                        <a class="chip" href="#contact" style="margin-left:10px">Hubungi Saya</a>
+                    </div>
+                    <div class="social">
+                        <a href="#" title="Instagram" aria-label="Instagram">📸</a>
+                        <a href="#" title="GitHub" aria-label="GitHub">🐱</a>
+                        <a href="#" title="Email" aria-label="Email">✉️</a>
+                    </div>
+                </div>
+
+                <aside class="card" aria-label="Informasi singkat">
+                    <h3>Info Singkat</h3>
+                    <p>Nama: <strong>Hasan Ramdani</strong><br>Kelas: <strong>XI TJKT 1</strong></p>
+                    <p class="muted">Senang membuat proyek web sederhana dan belajar pengembangan.</p>
+                </aside>
+            </section>
+
+            <section id="features" class="grid" aria-labelledby="features-title" style="margin-top:8px">
+                <div class="feature">
+                    <h4 id="features-title">Responsif</h4>
+                    <p>Tampilan yang baik di desktop dan ponsel.</p>
+                </div>
+                <div class="feature">
+                    <h4>Kontak Cepat</h4>
+                    <p>Formulir kontak sederhana untuk menerima pesan.</p>
+                </div>
+                <div class="feature">
+                    <h4>Mudah Dikustom</h4>
+                    <p>Ganti warna, teks, dan tambahkan proyek Anda sendiri.</p>
+                </div>
+            </section>
+
+            <section id="projects" style="margin-top:18px">
+                <h2 style="margin-bottom:12px">Proyek Contoh</h2>
+                <div class="grid">
+                    <div class="project">
+                        <img src="https://picsum.photos/seed/p1/600/360" alt="Project 1">
+                        <h4 style="margin-top:10px">Website Sekolah</h4>
+                        <p class="muted">Desain halaman depan untuk tugas sekolah.</p>
+                    </div>
+                    <div class="project">
+                        <img src="https://picsum.photos/seed/p2/600/360" alt="Project 2">
+                        <h4 style="margin-top:10px">Aplikasi Catatan</h4>
+                        <p class="muted">Aplikasi sederhana untuk menyimpan catatan.</p>
+                    </div>
+                    <div class="project">
+                        <img src="https://picsum.photos/seed/p3/600/360" alt="Project 3">
+                        <h4 style="margin-top:10px">Portfolio</h4>
+                        <p class="muted">Halaman portofolio untuk menampilkan karya.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact" style="margin-top:18px">
+                <form id="contactForm" novalidate>
+                    <h3>Kontak</h3>
+                    <label>Nama
+                        <input type="text" name="name" id="name" required placeholder="Nama Anda">
+                    </label>
+                    <label style="margin-top:8px">Email
+                        <input type="email" name="email" id="email" required placeholder="email@contoh.com">
+                    </label>
+                    <label style="margin-top:8px">Pesan
+                        <textarea name="message" id="message" rows="4" required placeholder="Tulis pesan..."></textarea>
+                    </label>
+                    <div style="margin-top:10px">
+                        <button class="btn" type="submit">Kirim Pesan</button>
+                    </div>
+                    <div id="formMsg" class="muted" style="margin-top:8px;display:none"></div>
+                </form>
+
+                <aside class="card">
+                    <h4>Hubungi Lewat</h4>
+                    <p class="muted">Alamat email atau tautan sosial.</p>
+                    <p style="margin-top:12px"><strong>Email:</strong> hasanramdani232@gmail.com</p>
+                    <p style="margin-top:6px"><strong>Kelas:</strong> XI TJKT 1</p>
+                    <p style="margin-top:10px" class="muted">Gunakan formulir untuk mengirim pesan — ini demo lokal (tidak mengirim email).</p>
+                </aside>
+            </section>
+        </main>
+
+        <footer>
+            © 2025 Hasan Ramdani — XI TJKT 1
+        </footer>
+    </div>
+
+    <script>
+        // simple mobile toggle
+        (function(){
+            const btn = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav-links');
+            btn && btn.addEventListener('click', ()=> nav.classList.toggle('open'));
+        })();
+
+        // smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click', e=>{
+                const target = document.querySelector(a.getAttribute('href'));
+                if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+            });
+        });
+
+        // simple form handler (demo)
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            const out = document.getElementById('formMsg');
+            if(!name||!email||!msg){ out.style.display='block'; out.textContent='Semua kolom harus diisi.'; out.style.color='crimson'; return; }
+            // pretend send
+            out.style.display='block'; out.style.color='green';
+            out.textContent='Terima kasih, pesan Anda telah diterima (demo).';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
